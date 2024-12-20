@@ -2,15 +2,15 @@ provider "aws" {
     region = "us-east-1"
 }
 
-variable "ami_value" {
+variable "ami" {
   description = "This is AMI for the instance"
 }
 
-variable "awsinstance_type" {
+variable "instance_type" {
   description = "This is the instance type, for example: t2.micro"
 }
 
 resource "aws_instance" "example" {
-    ami = var.ami_value
-    instance_type = var.awsinstance_type
+    ami = var.ami
+    instance_type = var.instance_type
 }
